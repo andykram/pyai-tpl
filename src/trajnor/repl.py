@@ -6,7 +6,7 @@ from pydantic_ai.models.test import TestModel
 
 def create_agent() -> Agent:
     """Create and configure the pydantic-ai agent.
-    
+
     Returns:
         Agent: Configured pydantic-ai agent
     """
@@ -23,24 +23,24 @@ def run_repl():
     print("Welcome to Trajnor REPL!")
     print("Type 'exit', 'quit', or press Ctrl+C to exit.")
     print("-" * 50)
-    
+
     agent = create_agent()
-    
+
     while True:
         try:
             user_input = input("\nYou: ").strip()
-            
+
             if not user_input:
                 continue
-                
+
             if user_input.lower() in ["exit", "quit"]:
                 print("Goodbye!")
                 break
-            
+
             # Run the agent with the user input
             result = agent.run_sync(user_input)
             print(f"Agent: {result.output}")
-            
+
         except KeyboardInterrupt:
             print("\n\nGoodbye!")
             break

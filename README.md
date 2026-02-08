@@ -40,6 +40,38 @@ In the REPL, you can interact with the AI agent:
 
 ## Development
 
+### Code Quality
+
+This project uses [Ruff](https://docs.astral.sh/ruff/) for linting and formatting.
+
+#### Linting
+
+Check code for issues:
+
+```bash
+uv run ruff check .
+```
+
+Auto-fix issues:
+
+```bash
+uv run ruff check --fix .
+```
+
+#### Formatting
+
+Check code formatting:
+
+```bash
+uv run ruff format --check .
+```
+
+Format code:
+
+```bash
+uv run ruff format .
+```
+
 ### Running Tests
 
 Run all tests:
@@ -59,6 +91,14 @@ Run tests with coverage:
 ```bash
 uv run pytest --cov=src/trajnor
 ```
+
+### CI/CD
+
+This project uses GitHub Actions for continuous integration:
+
+- **Tests**: Runs on all PRs and pushes to main
+- **CodeQL Security Analysis**: Runs on all PRs and pushes to main, plus weekly scans
+- **Lint and Format**: Runs on all PRs and pushes to main
 
 ### Project Structure
 
