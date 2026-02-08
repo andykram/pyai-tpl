@@ -1,0 +1,22 @@
+[project]
+name = "trajnor"
+version = "0.1.0"
+description = "An LLM-Agent Framework for Trajectory Modeling"
+readme = "README.md"
+requires-python = ">=3.14"
+dependencies = [
+    "pydantic-ai>=1.56.0",
+    "pytest>=9.0.2",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+python_classes = ["Test*"]
+python_functions = ["test_*"]
+addopts = "-v"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
